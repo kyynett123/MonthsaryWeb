@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6f9f4"/>
+      <stop offset="100%" stop-color="#e3ede1"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#bgGrad3)"/>
+  
+  <!-- Cute Vintage Camera -->
+  <g transform="translate(140, 160)">
+    <!-- Camera Body -->
+    <rect x="0" y="30" width="220" height="150" rx="20" fill="#527359"/>
+    <!-- Top Flash/Button -->
+    <rect x="30" y="14" width="40" height="18" rx="4" fill="#3e5643"/>
+    <rect x="150" y="18" width="30" height="12" rx="4" fill="#8ea891"/>
+    <!-- Lens Outer Ring -->
+    <circle cx="110" cy="105" r="52" fill="#3e5643"/>
+    <circle cx="110" cy="105" r="42" fill="#ffffff"/>
+    <circle cx="110" cy="105" r="32" fill="#283a2c"/>
+    <circle cx="118" cy="98" r="8" fill="#ffffff" opacity="0.6"/>
+    <!-- Heart sticker on camera -->
+    <circle cx="180" cy="65" r="14" fill="#fdfbf7"/>
+    <path d="M 180,62 C 177,57 170,58 170,64 C 170,70 180,76 180,76 C 180,76 190,70 190,64 C 190,58 183,57 180,62 Z" fill="#d89d88"/>
+  </g>
+
+  <!-- Floating Sparkles & Confetti -->
+  <text x="110" y="130" font-size="24" fill="#c49e54">✨</text>
+  <text x="370" y="180" font-size="28" fill="#c49e54">✨</text>
+  <text x="130" y="360" font-size="20" fill="#75977c">🌿</text>
+  <text x="350" y="350" font-size="22" fill="#d89d88">💚</text>
+
+  <!-- Caption -->
+  <text x="250" y="410" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="24" font-weight="600" fill="#3e5643">Endless Laughs &amp; Smiles</text>
+  <text x="250" y="435" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#6f8873" letter-spacing="1">CAPTURING EVERY HAPPY MOMENT</text>
+</svg>

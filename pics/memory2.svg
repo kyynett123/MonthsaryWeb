@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sunsetGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#faeee3"/>
+      <stop offset="50%" stop-color="#ecd9c9"/>
+      <stop offset="100%" stop-color="#d3e2d0"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#sunsetGrad)"/>
+  
+  <!-- Gentle Sun -->
+  <circle cx="250" cy="220" r="75" fill="#fce4b8" opacity="0.85"/>
+  <circle cx="250" cy="220" r="95" fill="#fce4b8" opacity="0.35"/>
+
+  <!-- Rolling Hills -->
+  <path d="M 0,340 Q 150,280 320,330 T 500,320 L 500,500 L 0,500 Z" fill="#88a88f"/>
+  <path d="M 0,370 Q 220,330 380,380 T 500,360 L 500,500 L 0,500 Z" fill="#527359"/>
+
+  <!-- Couple Silhouette on Hill -->
+  <g fill="#283a2c">
+    <!-- Person 1 -->
+    <circle cx="236" cy="305" r="12"/>
+    <path d="M 224,320 C 224,320 236,316 248,320 L 244,360 L 226,360 Z"/>
+    
+    <!-- Person 2 -->
+    <circle cx="262" cy="308" r="11"/>
+    <path d="M 250,322 C 250,322 262,319 274,322 L 270,360 L 254,360 Z"/>
+    
+    <!-- Little Heart Floating Above -->
+    <path d="M 249,275 C 244,268 234,270 234,279 C 234,288 249,298 249,298 C 249,298 264,288 264,279 C 264,270 254,268 249,275 Z" fill="#d89d88"/>
+  </g>
+
+  <!-- Stars / Sparkles -->
+  <text x="130" y="140" font-size="16" fill="#c49e54">✦</text>
+  <text x="360" y="120" font-size="20" fill="#c49e54">✧</text>
+  <text x="390" y="190" font-size="14" fill="#c49e54">✦</text>
+
+  <!-- Caption -->
+  <text x="250" y="430" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="24" font-weight="600" fill="#ffffff">Sunset With You</text>
+  <text x="250" y="455" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#e0ede0" letter-spacing="1">MY FAVORITE GOLDEN HOUR</text>
+</svg>

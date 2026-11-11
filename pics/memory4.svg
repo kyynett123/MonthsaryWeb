@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdfbf7"/>
+      <stop offset="100%" stop-color="#ebf1e8"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#bgGrad4)"/>
+
+  <!-- Botanical Wreath / Ring -->
+  <g stroke="#6b8e72" stroke-width="2.5" fill="none">
+    <circle cx="250" cy="230" r="110" stroke-dasharray="8 6"/>
+  </g>
+  
+  <!-- Little Leaves on the Wreath -->
+  <g fill="#88a88f">
+    <ellipse cx="250" cy="120" rx="14" ry="7" transform="rotate(-15 250 120)"/>
+    <ellipse cx="360" cy="230" rx="14" ry="7" transform="rotate(75 360 230)"/>
+    <ellipse cx="250" cy="340" rx="14" ry="7" transform="rotate(165 250 340)"/>
+    <ellipse cx="140" cy="230" rx="14" ry="7" transform="rotate(-105 140 230)"/>
+    <ellipse cx="330" cy="150" rx="12" ry="6" transform="rotate(35 330 150)"/>
+    <ellipse cx="170" cy="310" rx="12" ry="6" transform="rotate(35 170 310)"/>
+  </g>
+
+  <!-- Big Central Heart with "Together" -->
+  <g>
+    <path d="M 250,185 C 235,165 200,165 200,195 C 200,225 250,265 250,265 C 250,265 300,225 300,195 C 300,165 265,165 250,185 Z" fill="#527359"/>
+    <path d="M 250,198 C 240,184 216,184 216,204 C 216,224 250,250 250,250 C 250,250 284,224 284,204 C 284,184 260,184 250,198 Z" fill="#d89d88"/>
+  </g>
+
+  <!-- Ribbons / Sparkles -->
+  <text x="250" y="233" text-anchor="middle" font-size="18" fill="#ffffff">🌿</text>
+  <text x="180" y="160" font-size="20" fill="#c49e54">✨</text>
+  <text x="315" y="290" font-size="20" fill="#c49e54">✨</text>
+
+  <!-- Caption -->
+  <text x="250" y="410" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="24" font-weight="600" fill="#3e5643">You &amp; Me, Forever</text>
+  <text x="250" y="435" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#6f8873" letter-spacing="1">GROWING STRONGER EVERY DAY</text>
+</svg>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Monthsary, My Love 🌿💚</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Audio / Web Audio Synth for sweet background melody -->
+  <audio id="bgMusic" loop preload="auto">
+    <!-- Replace source with couple's favorite mp3 if available, or fallback to our built-in soft melody -->
+    <source src="" type="audio/mp3">
+  </audio>
+
+  <!-- Floating interactive background canvas (petals, hearts, stars) -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- Top Navigation & Quick Controls -->
+  <header class="top-nav">
+    <div class="nav-brand">
+      <span class="heart-icon">🌿</span>
+      <span class="brand-text">Our Story</span>
+    </div>
+    <div class="nav-actions">
+      <!-- Music toggle button -->
+      <button id="musicToggleBtn" class="pill-btn music-btn" title="Play romantic music">
+        <span class="btn-icon">🎵</span>
+        <span class="btn-label">Play Music</span>
+      </button>
+      <!-- Heart QR Generator Button -->
+      <button id="openQrModalBtn" class="pill-btn qr-btn" title="View & Print Heart QR Code">
+        <span class="btn-icon">💚</span>
+        <span class="btn-label">Heart QR Code</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="content-wrapper">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-badge">
+        <span class="leaf-left">🌿</span>
+        <span id="milestoneLabel">Happy Monthsary</span>
+        <span class="leaf-right">🌿</span>
+      </div>
+
+      <h1 class="couple-title">
+        <span class="partner-name editable" id="partnerName1" contenteditable="false">Her Name</span>
+        <span class="ampersand">&amp;</span>
+        <span class="partner-name editable" id="partnerName2" contenteditable="false">His Name</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        "In a sea of people, my eyes will always search for you."
+      </p>
+
+      <div class="hero-tags">
+        <span class="tag">Every moment with you is a blessing</span>
+        <span class="tag">Growing together in love</span>
+      </div>
+
+      <a href="#counter-section" class="scroll-indicator">
+        <span class="scroll-text">Scroll to unfold our memories</span>
+        <div class="bouncing-heart">💚</div>
+      </a>
+    </section>
+
+    <!-- Live Counter Section -->
+    <section id="counter-section" class="section-card counter-section">
+      <div class="section-header">
+        <span class="section-eyebrow">COUNTING EVERY PRECIOUS SECOND</span>
+        <h2>Time We've Been Falling in Love</h2>
+        <p class="section-desc">From the moment you entered my life, every second has become meaningful.</p>
+      </div>
+
+      <div class="counter-grid">
+        <div class="counter-box">
+          <span class="counter-number" id="countDays">00</span>
+          <span class="counter-unit">Days</span>
+        </div>
+        <div class="counter-box">
+          <span class="counter-number" id="countHours">00</span>
+          <span class="counter-unit">Hours</span>
+        </div>
+        <div class="counter-box">
+          <span class="counter-number" id="countMinutes">00</span>
+          <span class="counter-unit">Minutes</span>
+        </div>
+        <div class="counter-box">
+          <span class="counter-number" id="countSeconds">00</span>
+          <span class="counter-unit">Seconds</span>
+        </div>
+      </div>
+
+      <!-- Quick Date Configurator Pill (Easy for client to test any anniversary date!) -->
+      <div class="date-customizer">
+        <label for="anniversaryInput">Anniversary Date:</label>
+        <input type="datetime-local" id="anniversaryInput">
+        <button id="saveDateBtn" class="pill-btn mini-btn">Set Date</button>
+      </div>
+    </section>
+
+    <!-- Interactive Love Letter / Wax Seal Envelope -->
+    <section class="section-card envelope-section">
+      <div class="section-header">
+        <span class="section-eyebrow">A SECRET MESSAGE FOR YOU</span>
+        <h2>Open When You're Ready</h2>
+        <p class="section-desc">Tap the wax seal to unfold the letter written straight from my heart.</p>
+      </div>
+
+      <div class="envelope-wrapper">
+        <div class="envelope" id="loveEnvelope">
+          <div class="envelope-flap" id="envelopeFlap"></div>
+          <div class="envelope-pocket"></div>
+          
+          <div class="wax-seal" id="waxSeal" title="Click to open the letter">
+            <span class="seal-icon">🌿</span>
+            <span class="seal-text">OPEN</span>
+          </div>
+
+          <!-- Unfolded letter that slides up -->
+          <div class="letter-paper" id="letterPaper">
+            <div class="letter-inner">
+              <div class="letter-date" id="letterCurrentDate">Today & Forever</div>
+              <h3 class="letter-greeting">My Dearest Love,</h3>
+              <div class="letter-body">
+                <p>
+                  Happy Monthsary! Words often fall short when I try to express how grateful I am to have you by my side.
+                </p>
+                <p>
+                  Thank you for all the laughter, the gentle talks, the quiet comfort, and the patience you shower me with every single day. Being loved by you is my favorite feeling in the world.
+                </p>
+                <p>
+                  No matter how busy the world gets, always remember: you are my peace, my home, and my favorite adventure. Here's to more months, more memories, and a lifetime of loving you.
+                </p>
+                <p class="letter-closing">
+                  Forever yours,<br>
+                  <span class="letter-signature">Always &amp; Forever 💚</span>
+                </p>
+              </div>
+              <button class="pill-btn mini-btn close-letter-btn" id="closeLetterBtn">Fold Letter Back</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Polaroid Memories Gallery Section -->
+    <section class="section-card gallery-section">
+      <div class="section-header">
+        <span class="section-eyebrow">OUR FAVORITE SNAPSHOTS</span>
+        <h2>Moments Frozen In Time</h2>
+        <p class="section-desc">Every picture holds a memory I treasure deeply. Tap to view larger.</p>
+      </div>
+
+      <div class="polaroid-grid">
+        <!-- Polaroid Item 1 -->
+        <div class="polaroid-card" data-tilt="-2" data-full="pics/memory1.svg" data-caption="Our unforgettable first date smiles ☕🌿" data-date="The Beginning">
+          <div class="tape-strip"></div>
+          <div class="polaroid-img-box">
+            <img src="pics/memory1.svg" alt="Memory 1">
+          </div>
+          <div class="polaroid-caption">
+            <span class="caption-text">Where our sweet story began ☕</span>
+            <span class="caption-date">Day One</span>
+          </div>
+        </div>
+
+        <!-- Polaroid Item 2 -->
+        <div class="polaroid-card" data-tilt="3" data-full="pics/memory2.svg" data-caption="Sunsets are pretty, but looking at you is prettier 🌅" data-date="Golden Hour">
+          <div class="tape-strip"></div>
+          <div class="polaroid-img-box">
+            <img src="pics/memory2.svg" alt="Memory 2">
+          </div>
+          <div class="polaroid-caption">
+            <span class="caption-text">My favorite view in the world ✨</span>
+            <span class="caption-date">Sunset Walk</span>
+          </div>
+        </div>
+
+        <!-- Polaroid Item 3 -->
+        <div class="polaroid-card" data-tilt="-1.5" data-full="pics/memory3.svg" data-caption="Laughing uncontrollably at the silly things we do 😂💚" data-date="Pure Happiness">
+          <div class="tape-strip"></div>
+          <div class="polaroid-img-box">
+            <img src="pics/memory3.svg" alt="Memory 3">
+          </div>
+          <div class="polaroid-caption">
+            <span class="caption-text">Always smiling when with you 🥰</span>
+            <span class="caption-date">Silly Moments</span>
+          </div>
+        </div>
+
+        <!-- Polaroid Item 4 -->
+        <div class="polaroid-card" data-tilt="2.5" data-full="pics/memory4.svg" data-caption="Holding hands and making plans for our future 🌿" data-date="Hand in Hand">
+          <div class="tape-strip"></div>
+          <div class="polaroid-img-box">
+            <img src="pics/memory4.svg" alt="Memory 4">
+          </div>
+          <div class="polaroid-caption">
+            <span class="caption-text">Holding hands, keeping promises 🌿</span>
+            <span class="caption-date">Always You</span>
+          </div>
+        </div>
+      </div>
+      <p class="polaroid-hint">💡 Tip: Drop her real photos into the <code>pics/</code> folder to replace placeholders seamlessly!</p>
+    </section>
+
+    <!-- Milestone Journey Timeline -->
+    <section class="section-card timeline-section">
+      <div class="section-header">
+        <span class="section-eyebrow">OUR LOVE CHAPTERS</span>
+        <h2>How Our Love Bloomed</h2>
+        <p class="section-desc">Every milestone has brought us closer together.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-badge">🌿</div>
+          <div class="timeline-content">
+            <span class="milestone-date">Chapter 1</span>
+            <h3>The Day Our Paths Crossed</h3>
+            <p>A simple greeting that turned into the sweetest coincidence of my life.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="timeline-badge">☕</div>
+          <div class="timeline-content">
+            <span class="milestone-date">Chapter 2</span>
+            <h3>Our First Coffee &amp; Endless Talks</h3>
+            <p>Hours felt like minutes as we talked about our dreams, jokes, and everything under the sun.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="timeline-badge">💌</div>
+          <div class="timeline-content">
+            <span class="milestone-date">Chapter 3</span>
+            <h3>When It Became Official</h3>
+            <p>The day my heart found its permanent address. Best decision I have ever made.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="timeline-badge">🌸</div>
+          <div class="timeline-content">
+            <span class="milestone-date">Chapter 4</span>
+            <h3>Today: Another Beautiful Month</h3>
+            <p>Still falling for you more and more every day. The best is yet to come!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- "Reasons Why I Love You" Interactive Jar / Card Reveal -->
+    <section class="section-card notes-section">
+      <div class="section-header">
+        <span class="section-eyebrow">LITTLE THINGS THAT MEAN EVERYTHING</span>
+        <h2>Reasons Why I Love You</h2>
+        <p class="section-desc">Tap the button to pick a sweet reason from the jar!</p>
+      </div>
+
+      <div class="reason-jar-wrapper">
+        <div class="reason-card" id="reasonCard">
+          <div class="reason-sparkle">✨</div>
+          <p class="reason-text" id="reasonText">
+            "Because your smile can brighten even my most exhausting day."
+          </p>
+          <span class="reason-number" id="reasonCounter">Reason #1 of 12</span>
+        </div>
+        <button id="nextReasonBtn" class="pill-btn primary-btn">
+          <span>💌 Pull Another Reason</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Spotify / Romantic Melody Player Box -->
+    <section class="section-card music-section">
+      <div class="music-player-box">
+        <div class="album-art-wrap">
+          <div class="vinyl-disc" id="vinylDisc">
+            <div class="vinyl-center">🌿</div>
+          </div>
+        </div>
+        <div class="music-info">
+          <span class="music-badge">OUR SPECIAL SONG</span>
+          <h3 class="track-title" id="trackTitle">Can't Help Falling in Love</h3>
+          <p class="track-artist" id="trackArtist">Acoustic Piano &amp; Strings Melody</p>
+          
+          <div class="progress-bar-wrap">
+            <span class="time-label" id="currentTimeLabel">0:00</span>
+            <div class="progress-track" id="progressTrack">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="time-label" id="totalTimeLabel">2:45</span>
+          </div>
+
+          <div class="player-controls">
+            <button class="player-control-btn" id="prevTrackBtn" title="Previous">⏮️</button>
+            <button class="player-control-btn play-circle-btn" id="mainPlayBtn" title="Play/Pause">▶️</button>
+            <button class="player-control-btn" id="nextTrackBtn" title="Next">⏭️</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-heart">💚</div>
+      <p>Made with endless love for our monthsary celebration.</p>
+      <p class="footer-subtext">You and me, always and forever.</p>
+      <div class="footer-actions">
+        <button id="footerQrBtn" class="pill-btn mini-btn">Print / View Heart QR Code 🎁</button>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Photo Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxCloseBtn">&times;</button>
+      <img src="" alt="Enlarged Photo" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+      <div class="lightbox-date" id="lightboxDate"></div>
+    </div>
+  </div>
+
+  <!-- HEART QR CODE GENERATOR & PRINT MODAL -->
+  <div class="qr-modal" id="qrModal">
+    <div class="qr-modal-backdrop" id="qrModalBackdrop"></div>
+    <div class="qr-modal-dialog">
+      <button class="lightbox-close" id="qrCloseBtn">&times;</button>
+      
+      <div class="qr-modal-header">
+        <span class="qr-modal-tag">GIFT PREPARATION</span>
+        <h3>Heart QR Code Card 💚</h3>
+        <p>Give this QR code to her on a physical card, printed photo, or letter. When she scans it, this website opens!</p>
+      </div>
+
+      <div class="qr-card-preview" id="printableQrCard">
+        <div class="qr-card-border">
+          <div class="qr-botanical-top">🌿 🕊️ 🌿</div>
+          <div class="qr-card-title">A Special Surprise For You</div>
+          <div class="qr-card-subtitle">Scan with your phone camera</div>
+          
+          <!-- Heart QR Canvas Container -->
+          <div class="heart-qr-canvas-container">
+            <canvas id="qrCanvas" width="260" height="260"></canvas>
+            <div class="qr-heart-badge">💚</div>
+          </div>
+
+          <div class="qr-card-footer-text">
+            <span>Happy Monthsary, My Love</span>
+            <small id="qrTargetDisplay">https://your-website-link.com</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings to customize the QR link -->
+      <div class="qr-controls">
+        <div class="input-group">
+          <label for="qrUrlInput">Website URL to encode:</label>
+          <input type="text" id="qrUrlInput" value="https://monthsary-web.vercel.app" placeholder="Paste your deployed website link here">
+        </div>
+        <div class="qr-action-buttons">
+          <button id="updateQrBtn" class="pill-btn mini-btn">Regenerate QR</button>
+          <button id="downloadQrBtn" class="pill-btn primary-btn">Download QR Image 📥</button>
+          <button id="printCardBtn" class="pill-btn">Print Gift Card 🖨️</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Floating Click Hearts Container -->
+  <div id="clickHeartsContainer"></div>
+
+  <!-- QR Code Generator CDN (Lightweight & 100% Reliable) -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <!-- Javascript -->
+  <script src="script.js"></script>
+</body>
+</html>
